@@ -1,4 +1,4 @@
-import { store } from "@/shared/lib";
+import { store } from "@/app/stores";
 import type { ReactNode } from "react";
 import { Provider } from "react-redux";
 
