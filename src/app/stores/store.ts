@@ -1,7 +1,23 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
+
+interface MockState {
+  string: string;
+}
+
+const initialState: MockState = {
+  string: "",
+};
+
+const mockSlice = createSlice({
+  name: "mock",
+  initialState,
+  reducers: {},
+});
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    mock: mockSlice.reducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
